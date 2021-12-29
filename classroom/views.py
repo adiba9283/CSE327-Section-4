@@ -8,7 +8,7 @@ from django.utils.decorators import method_decorator
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
-from classroom.forms import UserForm,TeacherProfileForm,StudentProfileForm
+from classroom.forms import UserForm,TeacherProfileForm,StudentProfileForm,TeacherProfileUpdateForm,StudentProfileUpdateForm
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout,update_session_auth_hash
@@ -120,6 +120,42 @@ class TeacherDetailView(LoginRequiredMixin,DetailView):
     model = models.Teacher
     template_name = 'classroom/teacher_detail_page.html'
     
+
+## Profile update for teachers.
+@login_required
+def TeacherUpdateView(request,pk):
+    profile_updated = False
+    teacher = get_object_or_404(models.Teacher,pk=pk)
+    if request.method == "POST":
+        form = TeacherProfileUpdateForm(request.POST,instance=teacher)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            if 'teacher_profile_pic' in request.FILES:
+                profile.teacher_profile_pic = request.FILES['teacher_profile_pic']
+            profile.save()
+            profile_updated = True
+    else:
+        form = TeacherProfileUpdateForm(request.POST or None,instance=teacher)
+    return render(request,'classroom/teacher_update_page.html',{'profile_updated':profile_updated,'form':form})
+
+
+## Profile update for students.
+@login_required
+def StudentUpdateView(request,pk):
+    profile_updated = False
+    student = get_object_or_404(models.Student,pk=pk)
+    if request.method == "POST":
+        form = StudentProfileUpdateForm(request.POST,instance=student)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            if 'student_profile_pic' in request.FILES:
+                profile.student_profile_pic = request.FILES['student_profile_pic']
+            profile.save()
+            profile_updated = True
+    else:
+        form = StudentProfileUpdateForm(request.POST or None,instance=student)
+    return render(request,'classroom/student_update_page.html',{'profile_updated':profile_updated,'form':form})
+
 
 ## For changing password.
 @login_required

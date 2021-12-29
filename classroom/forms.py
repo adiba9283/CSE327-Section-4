@@ -39,3 +39,15 @@ class StudentProfileForm(forms.ModelForm):
                 }
 
 
+## Teacher Profile Update Form
+class TeacherProfileUpdateForm(forms.ModelForm):
+    class Meta():
+        model = Teacher
+        fields = ['name','subject_name','email','phone','teacher_profile_pic']
+
+
+## Student profile update form
+class StudentProfileUpdateForm(forms.ModelForm):
+    class Meta():
+        model = Student
+        fields = ['name','roll_no','email','phone','student_profile_pic']

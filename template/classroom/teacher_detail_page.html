@@ -17,7 +17,7 @@
       <p><i class="fas fa-books"></i> Subject Name: {{ teacher.subject_name }}</p>
       <p><i class="far fa-phone"></i> Phone: {{ teacher.phone }}</p>
       <p><i class="far fa-envelope-open-text"></i> Email ID: {{ teacher.email }}</p>
-      <p class="edit-button">Edit profile</p>
+      <a href="{% url 'classroom:teacher_update' pk=user.pk %}"><p class="edit-button">Edit profile</p></a>
     </div>
   </div>
 </div>
