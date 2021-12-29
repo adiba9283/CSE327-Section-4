@@ -13,7 +13,7 @@ class UserForm(UserCreationForm):
                 'password1': forms.PasswordInput(attrs={'class':'answer'}),
                 'password2': forms.PasswordInput(attrs={'class':'answer'}),
                 }
-        
+
 ## Teacher Registration Form 
 class TeacherProfileForm(forms.ModelForm):
     class Meta():
@@ -26,6 +26,12 @@ class TeacherProfileForm(forms.ModelForm):
                 'email': forms.EmailInput(attrs={'class':'answer'}),
                 }
 
+## Teacher Profile Update Form
+class TeacherProfileUpdateForm(forms.ModelForm):
+    class Meta():
+        model = Teacher
+        fields = ['name','subject_name','email','phone','teacher_profile_pic']
+
 ## Student Registration Form
 class StudentProfileForm(forms.ModelForm):
     class Meta():
@@ -37,14 +43,6 @@ class StudentProfileForm(forms.ModelForm):
                 'phone': forms.NumberInput(attrs={'class':'answer'}),
                 'email': forms.EmailInput(attrs={'class':'answer'}),
                 }
-
-
-## Teacher Profile Update Form
-class TeacherProfileUpdateForm(forms.ModelForm):
-    class Meta():
-        model = Teacher
-        fields = ['name','subject_name','email','phone','teacher_profile_pic']
-
 
 ## Student profile update form
 class StudentProfileUpdateForm(forms.ModelForm):
