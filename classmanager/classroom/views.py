@@ -21,6 +21,58 @@ from django.db.models import Q
 
 
 
+## For Marks obtained by the student in all subjects.
+class StudentAllMarksList(LoginRequiredMixin,DetailView):
+    model = models.Student
+    template_name = "classroom/student_allmarks_list.html"
+    context_object_name = "student"
+
+## To give marks to a student.
+@login_required
+def add_marks(request,pk):
+    marks_given = False
+    student = get_object_or_404(models.Student,pk=pk)
+    if request.method == "POST":
+        form = MarksForm(request.POST)
+        if form.is_valid():
+            marks = form.save(commit=False)
+            marks.student = student
+            marks.teacher = request.user.Teacher
+            marks.save()
+            messages.success(request,'Marks uploaded successfully!')
+            return redirect('classroom:submit_list')
+    else:
+        form = MarksForm()
+    return render(request,'classroom/add_marks.html',{'form':form,'student':student,'marks_given':marks_given})
+
+## For updating marks.
+@login_required
+def update_marks(request,pk):
+    marks_updated = False
+    obj = get_object_or_404(StudentMarks,pk=pk)
+    if request.method == "POST":
+        form = MarksForm(request.POST,instance=obj)
+        if form.is_valid():
+            marks = form.save(commit=False)
+            marks.save()
+            marks_updated = True
+    else:
+        form = MarksForm(request.POST or None,instance=obj)
+    return render(request,'classroom/update_marks.html',{'form':form,'marks_updated':marks_updated})
+
+
+## To see the list of all the marks given by the teacher to a specific student.
+@login_required
+def student_marks_list(request,pk):
+    error = True
+    student = get_object_or_404(models.Student,pk=pk)
+    teacher = request.user.Teacher
+    given_marks = StudentMarks.objects.filter(teacher=teacher,student=student)
+    return render(request,'classroom/student_marks_list.html',{'student':student,'given_marks':given_marks})
+
+
+    
+
 ## For student writing message to teacher.
 @login_required
 def write_message(request,pk):

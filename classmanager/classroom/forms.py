@@ -15,6 +15,13 @@ class UserForm(UserCreationForm):
                 }
 
 
+        
+## Form for uploading marks and also for updating it.
+class MarksForm(forms.ModelForm):
+    class Meta():
+        model = StudentMarks
+        fields = ['subject_name','marks_obtained','maximum_marks']
+
 ## Writing message to teacher        
 class MessageForm(forms.ModelForm):
     class Meta():
