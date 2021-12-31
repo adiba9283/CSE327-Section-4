@@ -46,3 +46,69 @@ def class_notice(request,pk):
     student = get_object_or_404(models.Student,pk=pk)
     return render(request,'classroom/class_notice_list.html',{'student':student})
 
+
+## List of all students that teacher has added in their class.
+def class_students_list(request):
+    query = request.GET.get("q", None)
+    students = StudentsInClass.objects.filter(teacher=request.user.Teacher)
+    students_list = [x.student for x in students]
+    qs = Student.objects.all()
+    if query is not None:
+        qs = qs.filter(
+                Q(name__icontains=query)
+                )
+    qs_one = []
+    for x in qs:
+        if x in students_list:
+            qs_one.append(x)
+        else:
+            pass
+    context = {
+        "class_students_list": qs_one,
+    }
+    template = "classroom/class_students_list.html"
+    return render(request, template, context)
+
+class ClassStudentsListView(LoginRequiredMixin,DetailView):
+    model = models.Teacher
+    template_name = "classroom/class_students_list.html"
+    context_object_name = "teacher"
+
+## List of students which are not added by teacher in their class.
+def students_list(request):
+    query = request.GET.get("q", None)
+    students = StudentsInClass.objects.filter(teacher=request.user.Teacher)
+    students_list = [x.student for x in students]
+    qs = Student.objects.all()
+    if query is not None:
+        qs = qs.filter(
+                Q(nameicontains=query)
+                )
+    qs_one = []
+    for x in qs:
+        if x in students_list:
+            pass
+        else:
+            qs_one.append(x)
+
+    context = {
+        "students_list": qs_one,
+    }
+    template = "classroom/students_list.html"
+    return render(request, template, context)
+
+## List of all the teacher present in the portal.
+def teachers_list(request):
+    query = request.GET.get("q", None)
+    qs = Teacher.objects.all()
+    if query is not None:
+        qs = qs.filter(
+                Q(nameicontains=query)
+                )
+
+    context = {
+        "teachers_list": qs,
+    }
+    template = "classroom/teachers_list.html"
+    return render(request, template, context)
+

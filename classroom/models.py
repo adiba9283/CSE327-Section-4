@@ -61,3 +61,14 @@ class ClassNotice(models.Model):
         ordering = ['-created_at']
         unique_together = ['teacher','message']
 
+
+
+class StudentsInClass(models.Model):
+    teacher = models.ForeignKey(Teacher,related_name="class_teacher",on_delete=models.CASCADE)
+    student = models.ForeignKey(Student,related_name="user_student_name",on_delete=models.CASCADE)
+
+    def str(self):
+        return self.student.name
+
+    class Meta:
+        unique_together = ('teacher','student')
