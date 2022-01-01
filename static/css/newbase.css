@@ -15,13 +15,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background-attachment:
+  background-attachment: fixed;
 }
 
 .profile-box{
   width: 600px;
   margin-top: 20px;
-  background: #e91e63;
+  background: #5ed8af;
   position: absolute;
   padding: 15px;
   border-radius: 10%;

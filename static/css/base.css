@@ -5,7 +5,7 @@
 }
 nav{
   width: 100%;
-  background: #00316b;
+  background: #93b6dd;
   margin-bottom: 0;
 }
 
@@ -15,7 +15,7 @@ ul{
     padding: 0;
     display: none;
     margin-bottom: 0;
-    background: #00316b;
+    background: #9ae4a0;
 }
 
 ul li{
@@ -26,20 +26,20 @@ ul li{
   margin: 0;
 }
 ul li:hover{
-  background: #e91e63;
+  background: #eeecec;
   display: block;
   margin-bottom: 0;
 }
 ul li a
 {
-  color: #fff;
+  color: rgb(5, 5, 5);
   text-decoration: none;
   display: block;
 }
 .toggle{
   width: 100%;
   padding: 10px;
-  background: #00316b;
+  background: #50b184;
   text-align: right;
   box-sizing: border-box;
   color: #fff;
@@ -68,7 +68,7 @@ ul li a
   position: relative;
   width: 100%;
   height: 100vh;
-  background: #3475ca;
+  background: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,202 +87,12 @@ ul li a
   position: relative;
   max-width: 750px;
   text-align: center;
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: 1000;
 }
 
 .banner .content{
   font-size: 40px;
-}
-
-.about{
-  position: relative;
-  background: #00316b;
-  color: white;
-  text-align: center;
-  padding: 100px;
-  letter-spacing: 2px;
-  font-weight: 600;
-  font-size: 25px;
-}
-
-.use-content{
-  background: #e91e63;
-  padding: 20px;
-  text-align: center;
-  color: white;
-  font-weight: 600;
-}
-
-.use-content h1{
-  font-weight: 700;
-  font-size: 50px;
-}
-
-.research{
-  background: #00316b;
-  padding:5%;
-  text-align: center;
-  color: white;
-  font-weight: 600;
-}
-
-.research img{
-  width:100%;
-  height: 100%;
-}
-
-.research .digital-content{
-  padding: 30px;
-  padding-top: 80px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 30px;
-}
-
-.box {
-  margin: 10%;
-  margin-left: 15%;
-  position: relative;
-  width: 400px;
-  height: 500px;
-  background: #000;
-  box-shadow: 0 30px 30px rgba(0,0,0,.5);
-}
-
-@media only screen and (max-width: 600px){
-  .box{
-    margin: 5%;
-  }
-}
-
-.box:hover{
-  transform: scale(1.1);
-  transition: 0.5s;
-}
-
-.box .imgBx {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.box .imgBx img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.5s;
-}
-
-.box:hover .imgBx img {
-  opacity: 0;
-}
-
-.box .content {
-  position: absolute;
-  bottom: 20px;
-  left: 10%;
-  width: 80%;
-  height: 60px;
-  background: #00316b;
-  transition: 0.5s;
-  overflow: hidden;
-  color: white;
-  padding: 15px;
-  box-sizing: border-box;
-}
-
-.box:hover .content {
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
-}
-
-.box .content h3 {
-  margin: 0;
-  padding: 5px;
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.box .content li {
-  margin: 10px 10px;
-  padding: 0;
-  opacity: 0;
-  line-height: 1.2em;
-  transition: 0.5s;
-  text-align: justify;
-}
-
-.box:hover .content li {
-  opacity: 1;
-  transition-delay: 0.5s;
-}
-
-.social{
-  background: #e91e63;
-  padding:5%;
-  color: white;
-  text-align: center;
-}
-
-.social i{
-  margin-top: 10px;
-  color: white;
-  font-size: 40px;
-
-}
-
-.social .social-icon{
-  display: inline-block;
-  width: 90px;
-  height: 90px;
-  padding: 10px;
-  margin: 10px;
-  background: #00316b;
-  border-radius: 30%;
-  box-shadow: 0 5px 15px -5px #00000070
-}
-
-.social-icon:hover{
-  transform: scale(1.2);
-  transition: 0.5s;
-}
-
-.social-icon:hover i{
-  transform: scale(1.5);
-  transition: 0.5s;
-  color: #e91e63;
-}
-
-/* SCROOL BAR ######################################## */
-
-/* width
-::-webkit-scrollbar {
-  width: 20px;
-}
-
-/* Track
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
-}
-
-/* Handle
-::-webkit-scrollbar-thumb {
-  background: red;
-  border-radius: 10px;
-}
-
-/* Handle on hover
-::-webkit-scrollbar-thumb:hover{
-  background: #e91e63;
 }
 
 /*  LOGIN PAGE ############################################# */
@@ -291,7 +101,6 @@ ul li a
   position: absolute;
   width: 100%;
   height: 120vh;
-  background: #3475ca;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -318,8 +127,8 @@ ul li a
   margin-top: 30px;
   height:600px;
   width:400px;
-  background: #e91e63;
-  color: white;
+  background:#50b184;
+  color:White;
   padding: 70px 100px;
   position: absolute;
 
@@ -364,7 +173,7 @@ ul li a
 .login-form input[type="text"], input[type="password"]
 {
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgb(245, 235, 235);
   background: transparent;
   outline: none;
   height: 40px;
@@ -384,20 +193,20 @@ ul li a
 .answer:hover{
   transform: scale(1.1);
   transition: 0.5;
-  border-bottom: 1px solid #00316b;
+  border-bottom: 1px solid #22499c;
 }
 
 .login-form input[type="text"]:hover, input[type="password"]:hover{
   transform: scale(1.1);
   transition: 0.5;
-  border-bottom: 1px solid #00316b;
+  border-bottom: 1px solid #5b52d8;
 }
 
 .login-form input[type="submit"]{
-  border: 1px solid #00316b;
+  border: 1px solid red;
   outline: none;
   height: 40px;
-  background: #00316b;
+  background: red;
   color: white;
   font-size: 18px;
 
@@ -419,16 +228,16 @@ ul li a
 }
 
 .login-form a:hover{
-  color: #00316b;
+  color: rgb(0, 55, 100);
   transform: scale(1.2);
   transition: 0.5s;
 }
 
-/*STUDENT SIGN UP ****************************************************/
+/*Teacher,Student SIGN UP ****************************************************/
 
 .student-signup-form{
   margin-top: 2px;
-  background: #e91e63;
+  background:#50b184 ;
   padding: 20px;
   padding-top: 3%;
   position: absolute;
@@ -460,10 +269,10 @@ ul li a
 
 
 .student-signup-form input[type="submit"]{
-  border: 1px solid #00316b;
+  border: 1px solid red;
   outline: none;
   height: 40px;
-  background: #00316b;
+  background: red;
   color: white;
   font-size: 18px;
   margin: 15px;
@@ -493,7 +302,7 @@ ul li a
 /* SIGN UP PAGE ************************************************/
 
 .login-page .signup{
-  background: #e91e63;
+  background: #50b184;
   height: 500px;
   width: 500px;
   margin-top: 10%;
@@ -537,18 +346,61 @@ ul li a
   font-weight: 400;
 }
 
-.notice{
-  margin-top: 50px;
+/* Change password PAGE ************************************************/
+
+.change-password-form{
+  margin-top: 30px;
+  height:600px;
+  width:400px;
+  background:#50b184;
+  color:White;
+  padding: 70px 100px;
+  position: absolute;
+
 }
 
-.notice .notice-details{
-  background: #c7c7c5;
-  padding: 20px;
-  color: black;
+.change-password-form h1,h3{
+  margin: 10px;
+  padding: 0;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 300;
+  opacity: 1;
 }
 
-.notice .notice-img{
-  width:75px;
-  height:75px;
-  border-radius: 50%;
+
+.change-password-form input[type="text"]{
+  color: white;
+}
+
+
+.change-password-form input[type="submit"]{
+  border: 1px solid red;
+  outline: none;
+  height: 40px;
+  background: red;
+  color: white;
+  font-size: 18px;
+  margin: 15px;
+}
+
+.change-password-form input[type="submit"]:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 0.5;
+}
+
+.change-password-form a{
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 20px;
+  color: white;
+  opacity: 1;
+}
+
+.change-password-form a:hover{
+  color: #00316b;
+  transform: scale(1.2);
+  transition: 0.5s;
 }
