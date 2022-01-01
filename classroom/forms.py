@@ -12,8 +12,8 @@ class UserForm(UserCreationForm):
                 'username': forms.TextInput(attrs={'class':'answer'}),
                 'password1': forms.PasswordInput(attrs={'class':'answer'}),
                 'password2': forms.PasswordInput(attrs={'class':'answer'}),
-                }
-        
+                }              
+                   
 ## Teacher Registration Form 
 class TeacherProfileForm(forms.ModelForm):
     class Meta():
